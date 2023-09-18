@@ -1,14 +1,15 @@
 const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
+const userEmail = "empresa@sportstore.proyectowebuni.com";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: "sastrerialospajaritos@gmail.com", // generated ethereal user
-    pass: "qmxptgjawgekmhms", // generated ethereal password
+    user: userEmail , // generated ethereal user
+    pass: "Sastreri@Pajarit0s", // generated ethereal password
     // user: "sastreria.pajaritos@gmail.com", // generated ethereal user
     // pass: "nwuamuhuccitmlol", // generated ethereal password
   },
@@ -26,7 +27,7 @@ router.post("/send-validate-email", async (req, res) => {
   const { email, id } = req.body;
   try {
     await transporter.sendMail({
-      from: "Sastrería los Pajaritos <sastreria.pajaritos@gmail.com>",
+      from: `Sastrería los Pajaritos ${userEmail }`,
       to: email,
       subject: "Comfirma tu cuenta",
       html: getCadenaValidateEmail(id),
@@ -41,7 +42,7 @@ router.post("/send-forgot-password", async (req, res) => {
   const { email, id } = req.body;
   try {
     await transporter.sendMail({
-      from: "Sastrería los Pajaritos <sastreria.pajaritos@gmail.com>",
+      from: `Sastrería los Pajaritos ${userEmail }`,
       to: email,
       subject: "Recuperación de contraseña",
       html: getCadenaForgotMail(id),

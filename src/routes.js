@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
-const userEmail = "empresa@sportstore.proyectowebuni.com";
+const userEmail = "empresa@sastrerialospajaritos.proyectowebuni.com";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.hostinger.com",
@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   secure: true, // true for 465, false for other ports
   auth: {
     user: userEmail , // generated ethereal user
-    pass: "Sastreri@Pajarit0s", // generated ethereal password
+    pass: "LosPajaritos/3", // generated ethereal password
     // user: "sastreria.pajaritos@gmail.com", // generated ethereal user
     // pass: "nwuamuhuccitmlol", // generated ethereal password
   },

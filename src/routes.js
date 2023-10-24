@@ -29,7 +29,7 @@ router.post("/send-validate-email", async (req, res) => {
     await transporter.sendMail({
       from: `Sastrería los Pajaritos ${userEmail }`,
       to: email,
-      subject: "Comfirma tu cuenta",
+      subject: "Confirma tu cuenta",
       html: getCadenaValidateEmail(id, verificationCode),
     });
   } catch (error) {
